@@ -1,0 +1,33 @@
+h3,
+p {
+  text-align: center;
+}
+
+.profile-container {
+  background-color: aliceblue;
+  width: 700px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  padding-top: 15px;
+}
+
+.profile-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profile-description__container {
+  width: 600px;
+  height: 180px;
+  background-color: beige;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profile-description__content {
+  padding: 50px 80px;
+  font-weight: 700;
+}
