@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/basic-form.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <h3 class="header">contact us</h3>
+      <div class="email">
+        <label for="email">Your email</label>
+        <input type="email" placeholder="email@example.com" id="email" />
+      </div>
+      <div class="name">
+        <div class="first-name">
+          <label for="first-name">First name</label>
+          <input type="text" id="first-name" />
+        </div>
+        <div class="last-name">
+          <label for="last-name">Last name</label>
+          <input type="text" id="last-name" />
+        </div>
+      </div>
+      <div style="clear: both"></div>
+      <div class="message">
+        <label for="message">Message</label>
+        <textarea id="message" cols="30" rows="10"></textarea>
+      </div>
+      <div class="footer">
+        <div class="subscription">
+          <input type="checkbox" id="subscribe" />
+          <label for="subscribe">Subscribe</label>
+        </div>
+        <input type="submit" value="SEND" />
+        <div style="clear: both"></div>
+      </div>
+    </form>
+  </body>
+</html>

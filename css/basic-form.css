@@ -1,0 +1,115 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #373737;
+}
+
+form {
+  background-color: white;
+  width: 480px;
+  margin: 50px auto;
+  padding: 40px;
+  padding-bottom: 50px;
+}
+
+label {
+  display: block;
+}
+
+input,
+textarea {
+  border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 10px 20px;
+  margin-top: 8px;
+}
+
+textarea {
+  resize: none;
+}
+
+.header {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.email,
+.name,
+.message {
+  margin-top: 14px;
+}
+
+.email input {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.email input::placeholder {
+  color: rgba(0, 0, 0, 0.2);
+  font-weight: 700;
+}
+
+.name {
+  width: 100%;
+}
+
+.first-name,
+.last-name {
+  width: 48%;
+}
+
+.first-name {
+  float: left;
+}
+
+.last-name {
+  float: right;
+}
+
+.first-name input,
+.last-name input {
+  width: 100%;
+  border-radius: 3px;
+}
+
+.message,
+.message textarea {
+  width: 100%;
+}
+
+.message textarea {
+  border-radius: 4px;
+}
+
+.footer {
+  margin-top: 14px;
+}
+
+.subscription {
+  float: left;
+}
+
+.subscription label {
+  display: inline;
+  vertical-align: text-top;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.footer input[type="submit"] {
+  float: right;
+  border: none;
+  background-color: #ffbf35;
+  color: white;
+  padding: 6px 30px;
+  border-radius: 3px;
+  cursor: pointer;
+}
