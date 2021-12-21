@@ -1,0 +1,112 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #b2ccd6;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.w-100 {
+  margin-bottom: 24px;
+}
+
+.title {
+  color: #133761;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: white;
+  border-radius: 5px;
+}
+
+tr {
+  width: 100%;
+  border-bottom: 1px solid #7b9eac;
+}
+
+td {
+  color: #7b9eac;
+  padding: 20px;
+}
+
+thead td {
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 2px;
+  padding: 10px 20px;
+}
+
+.item {
+  padding-left: 20px;
+  text-align: center;
+}
+
+.item-image {
+  width: 60px;
+  float: left;
+  margin-right: 20px;
+}
+
+.item-info {
+  float: left;
+  font-weight: 700;
+  text-align: start;
+}
+
+.item-maker {
+  color: black;
+}
+
+.amount,
+.price,
+.total {
+  text-align: end;
+}
+
+.amount,
+.price,
+.total {
+  font-weight: 700;
+}
+
+tbody .amount,
+tbody .price {
+  color: #b2ccd6;
+}
+
+.total {
+  color: #133761;
+}
+
+tfoot {
+  font-size: 18px;
+}
+
+tfoot tr {
+  border-bottom: none;
+}
+
+a {
+  color: #133761;
+}
+
+button {
+  float: right;
+  border: none;
+  padding: 25px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #b2ccd6;
+  background-color: #133761;
+  border-radius: 5px;
+}
