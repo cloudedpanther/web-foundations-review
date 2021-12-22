@@ -1,0 +1,78 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  background-color: #eee;
+  display: flex;
+  width: 100vw;
+  padding: 10px;
+}
+
+.shoe-box {
+  width: 33%;
+  margin: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.shoe-box img {
+  width: 100%;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 40px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.overlay:hover {
+  opacity: 1;
+}
+
+.overlay p {
+  transform: rotate(0.03deg);
+}
+
+.overlay2__container {
+  width: 100%;
+  height: 150%;
+  position: absolute;
+  bottom: -50%;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.overlay2 {
+  width: 100%;
+  height: 33%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 12px 20px;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.overlay2__container:hover {
+  opacity: 1;
+  bottom: 0%;
+}
+
+.overlay2 .hot {
+  font-size: 22px;
+}
