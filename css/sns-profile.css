@@ -1,0 +1,294 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  background-color: #f7f9fc;
+}
+
+.box-style {
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px #e5e7eb;
+}
+
+.splitter {
+  border-bottom: 3px solid #e5e7eb;
+}
+
+.main-card {
+  display: flex;
+}
+
+.main-card__img {
+  width: 66px;
+}
+
+.main-card__desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-card__name {
+  font-size: 14px;
+}
+
+.main-card__job {
+  font-size: 12px;
+  margin: 1px 0px;
+}
+
+.main-card__location {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  color: #6fbaf8;
+}
+
+.main-card__location p {
+  margin-left: 5px;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 1200px;
+  min-width: 880px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.header-row {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.header-column {
+  display: flex;
+}
+
+.header-img {
+  width: 180px;
+}
+
+.header-name {
+  font-size: 30px;
+}
+
+.header-job,
+.header-location {
+  font-size: 16px;
+}
+
+.header-location {
+  margin: 8px 0px;
+}
+
+.header-location p {
+  font-weight: 700;
+}
+
+.btn {
+  background-color: #6fbaf8;
+  color: white;
+  font-weight: 700;
+  padding: 10px 30px;
+  border-radius: 4px;
+}
+
+.header-details {
+  display: flex;
+  border-left: 3px solid #e5e7eb;
+  padding-left: 50px;
+}
+
+.header-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-right: 50px;
+}
+
+.header-list h6,
+.header-list p {
+  font-size: 16px;
+}
+
+.nav {
+  width: 98%;
+  margin: 20px auto;
+  display: flex;
+}
+
+.nav-item {
+  padding: 8px 20px;
+  color: #6fbaf8;
+  font-weight: 700;
+  border-bottom: 3px solid #6fbaf8;
+  position: relative;
+  bottom: -3px;
+}
+
+.profile-column {
+  float: left;
+}
+
+.pc-1,
+.pc-3 {
+  width: 20%;
+}
+
+.pc-2 {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-box {
+  width: 100%;
+  background-color: white;
+  padding: 24px;
+}
+
+.pc-2 .profile-box {
+  width: 95%;
+}
+
+.profile-item {
+  margin-bottom: 20px;
+}
+
+.profile-item__title {
+  font-size: 18px;
+  margin-bottom: 18px;
+}
+
+.profile-item__content {
+  margin-bottom: 50px;
+}
+
+.skills-list {
+  display: flex;
+  position: relative;
+  left: -5px;
+  height: 200px;
+}
+
+.skills-badge {
+  font-size: 12px;
+  font-weight: 700;
+  border: 2px solid #e5e7eb;
+  border-radius: 50px;
+  padding: 5px 15px;
+  margin-right: 10px;
+}
+
+.external-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #6fbaf8;
+  padding: 20px 0px;
+}
+
+.external-link i {
+  font-size: 80px;
+}
+
+.external-link i + p {
+  color: black;
+  font-size: 15px;
+  margin: 20px 0px;
+  text-align: center;
+}
+
+.external-link button + p {
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.recommendations {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.recommendations-title {
+  padding: 10px;
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.recommendations-people li {
+  margin-bottom: 16px;
+}
+
+.footer {
+  height: 100px;
+}
+
+/* media query */
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    min-width: 0px;
+  }
+
+  .header-row {
+    flex-direction: column;
+  }
+
+  .header-details {
+    border: none;
+    padding-left: 20px;
+    margin: 50px 0px;
+  }
+
+  .header-list {
+    height: 200px;
+  }
+
+  .header-list h6,
+  .header-list p {
+    font-size: 18px;
+  }
+
+  .nav {
+    width: 100%;
+  }
+
+  .pc-1,
+  .pc-2,
+  .pc-3 {
+    width: 100%;
+  }
+
+  .pc-2 .profile-box {
+    width: 100%;
+  }
+
+  .profile-box {
+    margin-bottom: 20px;
+  }
+
+  .skills-list {
+    height: 50px;
+  }
+
+  .mobile-hidden {
+    visibility: hidden;
+    display: none;
+  }
+}
