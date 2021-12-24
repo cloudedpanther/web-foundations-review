@@ -1,0 +1,92 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  margin: 50px;
+}
+
+.fancy-ul {
+  border: 1px solid rgba(206, 206, 206, 0.933);
+  font-size: 20px;
+
+  .fancy-li {
+    padding: 16px 24px;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(206, 206, 206, 0.933);
+    }
+
+    &.active {
+      background-color: #007bff;
+      color: white;
+    }
+  }
+}
+
+@mixin alert($bg, $c) {
+  padding-left: 16px;
+  padding-top: 14px;
+  padding-bottom: 18px;
+  background-color: $bg;
+  border-radius: 5px;
+  margin: 20px 0px;
+
+  p {
+    color: $c;
+
+    span {
+      font-weight: 700;
+    }
+  }
+}
+
+.alert--green {
+  @include alert(#deefd7, #567f58);
+}
+
+.alert--blue {
+  @include alert(#d9edf7, #497c99);
+}
+
+.alert--orange {
+  @include alert(#fbf8e3, #98794a);
+}
+
+.row {
+  width: 100%;
+  margin: 20px 0px;
+
+  @mixin col($w) {
+    width: $w;
+    float: left;
+    background-color: #e6e2eb;
+    padding: 16px;
+    border: 1px solid #dcd3e9;
+  }
+
+  .col-6 {
+    @include col(50%);
+  }
+
+  .col-4 {
+    @include col(33.33%);
+  }
+
+  .col-3 {
+    @include col(25%);
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+    float: none;
+  }
+}
