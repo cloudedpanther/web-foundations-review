@@ -1,0 +1,32 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.row {
+  width: 100%;
+
+  &::after {
+    display: block;
+    clear: both;
+    float: none;
+  }
+
+  @mixin col($w) {
+    float: left;
+    width: $w;
+  }
+
+  .col-6 {
+    @include col(50%);
+  }
+
+  .col-4 {
+    @include col(33.33%);
+  }
+
+  .col-3 {
+    @include col(25%);
+  }
+}
