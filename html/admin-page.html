@@ -15,6 +15,7 @@
   </head>
   <body>
     <div class="wrapper">
+      <aside class="menu"></aside>
       <header class="header">
         <div class="row">
           <div class="col-6">
@@ -28,9 +29,21 @@
           </div>
           <div class="col-6">
             <div class="notification">
-              <!-- icon bell -->
-              <!-- icon message -->
-              <p class="notification-name">John McCartney</p>
+              <div class="notification-column">
+                <i class="fas fa-bell"></i>
+                <div class="notification-badge">
+                  <p>6</p>
+                </div>
+              </div>
+              <div class="notification-column">
+                <i class="fas fa-envelope"></i>
+                <div class="notification-badge">
+                  <p>9</p>
+                </div>
+              </div>
+              <div class="notification-column">
+                <p class="notification-name">John McCartney</p>
+              </div>
             </div>
           </div>
         </div>
@@ -39,14 +52,134 @@
         <h4 class="dashboard-title">Dashboard</h4>
         <div class="dashboard">
           <div class="row">
-            <div class="col-3"></div>
-            <div class="col-3"></div>
-            <div class="col-3"></div>
-            <div class="col-3"></div>
+            <div class="col-3">
+              <div class="card-container">
+                <div class="card--skyblue">
+                  <div class="card-text">
+                    <p class="card-title">Earnings (Monthly)</p>
+                    <p class="card-content">$400,000</p>
+                  </div>
+                  <i class="fas fa-calendar"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="card-container">
+                <div class="card--green">
+                  <div class="card-text">
+                    <p class="card-title">Earnings (Annual)</p>
+                    <p class="card-content">$800,000</p>
+                  </div>
+                  <i class="fas fa-dollar-sign"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="card-container">
+                <div class="card--navy">
+                  <div class="card-text">
+                    <p class="card-title">Tasks</p>
+                    <p class="card-content">13</p>
+                  </div>
+                  <i class="fas fa-tasks"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="card-container">
+                <div class="card--yellow">
+                  <div class="card-text">
+                    <p class="card-title">Requests</p>
+                    <p class="card-content">26</p>
+                  </div>
+                  <i class="fas fa-comments"></i>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+        <nav class="overview">
+          <div class="row">
+            <div class="col-8">
+              <div class="graph">
+                <div class="board">
+                  <p class="board-title">Earnings Overview</p>
+                  <div class="board-content">
+                    <canvas class="chart" id="myChart"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="list">
+                <div class="board">
+                  <p class="board-title">Tasks</p>
+                  <div class="board-content">
+                    <ul>
+                      <li>
+                        <div class="task-item">
+                          <p class="task-name">Borrowed Items</p>
+                          <p class="task-number">14</p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="task-item">
+                          <p class="task-name">Trello Requests</p>
+                          <p class="task-number">2</p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="task-item">
+                          <p class="task-name">Marked Comments</p>
+                          <p class="task-number">1</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
       </article>
-      <nav class="menu"></nav>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      var ctx = document.getElementById("myChart").getContext("2d");
+      var myChart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+          ],
+          datasets: [
+            {
+              label: "Monthly",
+              data: [0, 10, 5, 2, 20, 30, 45],
+              backgroundColor: "rgba(73, 76, 180, 1)",
+              borderColor: "rgba(73, 76, 180, 1)",
+              borderWidth: 1,
+              tension: 0.4,
+              fill: true,
+            },
+          ],
+        },
+        options: {
+          responsive: false,
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    </script>
   </body>
 </html>

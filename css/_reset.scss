@@ -4,10 +4,16 @@
   box-sizing: border-box;
 }
 
+li {
+  list-style: none;
+}
+
 .row {
   width: 100%;
+  height: 100%;
 
   &::after {
+    content: "";
     display: block;
     clear: both;
     float: none;
@@ -16,6 +22,18 @@
   @mixin col($w) {
     float: left;
     width: $w;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .col-10 {
+    @include col(83.33%);
+  }
+
+  .col-8 {
+    @include col(66.66%);
   }
 
   .col-6 {
@@ -28,5 +46,31 @@
 
   .col-3 {
     @include col(25%);
+  }
+
+  .col-2 {
+    @include col(16.66%);
+  }
+}
+
+.board {
+  border-radius: 7px;
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+
+  .board-title {
+    background-color: #eee;
+    width: 100%;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    padding-left: 32px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .board-content {
+    background-color: white;
   }
 }
