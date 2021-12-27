@@ -459,4 +459,7 @@ li {
     margin-right: 26px;
     margin-top: 20px;
   }
+  .wrapper .overview .graph .chart {
+    padding: 0px 10px;
+  }
 }/*# sourceMappingURL=admin-page.css.map */
