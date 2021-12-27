@@ -7,14 +7,56 @@
   margin: auto;
   position: relative;
 
+  .header-mobile {
+    display: none;
+  }
+
   .menu {
     background-color: #494cb4;
+    color: white;
     width: 256px;
     height: 100%;
-    position: absolute;
+    font-size: 22px;
+    position: fixed;
     top: 0px;
     left: 0px;
     transform: translate(-186px);
+    transition: all 1s;
+
+    ul {
+      li {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 48px;
+
+        p {
+          width: 166px;
+          opacity: 0;
+          transition: all 1s;
+        }
+
+        i {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 70px;
+          transition: all 1s;
+        }
+      }
+    }
+
+    &:hover {
+      transform: translate(0px);
+
+      p {
+        opacity: 1;
+        transform: translate(120px);
+      }
+
+      i {
+        transform: translate(-166px);
+      }
+    }
   }
 
   .header {
@@ -35,6 +77,7 @@
         border: 2px solid rgba(0, 0, 0, 0.1);
         padding-left: 14px;
         font-size: 18px;
+        transition: all 1s;
 
         &::placeholder {
           color: rgba(0, 0, 0, 0.3);
@@ -45,6 +88,7 @@
         &:focus {
           outline: none;
           box-shadow: 0px 0px 10px rgb(57, 181, 230);
+          width: 470px;
         }
       }
 
@@ -65,10 +109,15 @@
         cursor: pointer;
         position: relative;
         left: -54px;
+        transition: all 1s;
 
         i {
           font-size: 22px;
         }
+      }
+
+      .search-box:focus .search-button {
+        transform: translate(200px);
       }
     }
 
@@ -231,6 +280,50 @@
             border-radius: 20px;
           }
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    min-width: 0px;
+
+    .header-wide {
+      display: none;
+    }
+
+    .header-mobile {
+      display: flex;
+      justify-content: end;
+      padding-right: 20px;
+      align-items: center;
+      font-size: 32px;
+      color: rgba(0, 0, 0, 0.3);
+
+      i {
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        padding: 8px 12px;
+      }
+    }
+
+    .main {
+      .dashboard {
+        height: 200px;
+
+        .card-container {
+          margin-right: 26px;
+          padding-bottom: 20px;
+        }
+      }
+    }
+
+    .overview {
+      .graph,
+      .list {
+        margin-right: 26px;
+        margin-top: 20px;
       }
     }
   }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
@@ -12,12 +13,43 @@
     />
     <link rel="stylesheet" href="../css/admin-page.css" />
     <title>Document</title>
+    <script type="text/javascript">
+      (function () {
+        var css = document.createElement("link");
+        css.href = "https://use.fontawesome.com/releases/v5.1.0/css/all.css";
+        css.rel = "stylesheet";
+        css.type = "text/css";
+        document.getElementsByTagName("head")[0].appendChild(css);
+      })();
+    </script>
   </head>
   <body>
     <div class="wrapper">
-      <aside class="menu"></aside>
+      <aside class="menu">
+        <ul>
+          <li>
+            <p>Home</p>
+            <i class="fas fa-home"></i>
+          </li>
+          <li>
+            <p>Services</p>
+            <i class="fas fa-headphones-alt"></i>
+          </li>
+          <li>
+            <p>Alerts</p>
+            <i class="fas fa-flag"></i>
+          </li>
+          <li>
+            <p>Stats</p>
+            <i class="fas fa-chart-pie"></i>
+          </li>
+        </ul>
+      </aside>
       <header class="header">
-        <div class="row">
+        <div class="row header-mobile">
+          <i class="fas fa-bars"></i>
+        </div>
+        <div class="row header-wide">
           <div class="col-6">
             <form class="search">
               <input class="search-box" type="text" placeholder="Search" />
@@ -52,7 +84,7 @@
         <h4 class="dashboard-title">Dashboard</h4>
         <div class="dashboard">
           <div class="row">
-            <div class="col-3">
+            <div class="col-md-3">
               <div class="card-container">
                 <div class="card--skyblue">
                   <div class="card-text">
@@ -63,7 +95,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-3">
+            <div class="col-md-3">
               <div class="card-container">
                 <div class="card--green">
                   <div class="card-text">
@@ -74,7 +106,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-3">
+            <div class="col-md-3">
               <div class="card-container">
                 <div class="card--navy">
                   <div class="card-text">
@@ -85,7 +117,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-3">
+            <div class="col-md-3">
               <div class="card-container">
                 <div class="card--yellow">
                   <div class="card-text">
@@ -100,7 +132,7 @@
         </div>
         <nav class="overview">
           <div class="row">
-            <div class="col-8">
+            <div class="col-md-8">
               <div class="graph">
                 <div class="board">
                   <p class="board-title">Earnings Overview</p>
@@ -110,7 +142,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
               <div class="list">
                 <div class="board">
                   <p class="board-title">Tasks</p>

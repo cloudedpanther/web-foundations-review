@@ -26,6 +26,13 @@ li {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &::after {
+      content: "";
+      display: block;
+      clear: both;
+      float: none;
+    }
   }
 
   .col-10 {
@@ -50,6 +57,41 @@ li {
 
   .col-2 {
     @include col(16.66%);
+  }
+
+  .col-md-10 {
+    @extend .col-10;
+  }
+
+  .col-md-8 {
+    @extend .col-8;
+  }
+
+  .col-md-6 {
+    @extend .col-6;
+  }
+
+  .col-md-4 {
+    @extend .col-4;
+  }
+
+  .col-md-3 {
+    @extend .col-3;
+  }
+
+  .col-md-2 {
+    @extend .col-2;
+  }
+
+  @media screen and (max-width: 768px) {
+    .col-md-10,
+    .col-md-8,
+    .col-md-6,
+    .col-md-4,
+    .col-md-3,
+    .col-md-2 {
+      width: 100%;
+    }
   }
 }
 

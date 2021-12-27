@@ -18,7 +18,7 @@ li {
   clear: both;
   float: none;
 }
-.row .col-10 {
+.row .col-10, .row .col-md-10 {
   float: left;
   width: 83.33%;
   height: 100%;
@@ -26,7 +26,13 @@ li {
   align-items: center;
   justify-content: center;
 }
-.row .col-8 {
+.row .col-10::after, .row .col-md-10::after {
+  content: "";
+  display: block;
+  clear: both;
+  float: none;
+}
+.row .col-8, .row .col-md-8 {
   float: left;
   width: 66.66%;
   height: 100%;
@@ -34,7 +40,13 @@ li {
   align-items: center;
   justify-content: center;
 }
-.row .col-6 {
+.row .col-8::after, .row .col-md-8::after {
+  content: "";
+  display: block;
+  clear: both;
+  float: none;
+}
+.row .col-6, .row .col-md-6 {
   float: left;
   width: 50%;
   height: 100%;
@@ -42,7 +54,13 @@ li {
   align-items: center;
   justify-content: center;
 }
-.row .col-4 {
+.row .col-6::after, .row .col-md-6::after {
+  content: "";
+  display: block;
+  clear: both;
+  float: none;
+}
+.row .col-4, .row .col-md-4 {
   float: left;
   width: 33.33%;
   height: 100%;
@@ -50,7 +68,13 @@ li {
   align-items: center;
   justify-content: center;
 }
-.row .col-3 {
+.row .col-4::after, .row .col-md-4::after {
+  content: "";
+  display: block;
+  clear: both;
+  float: none;
+}
+.row .col-3, .row .col-md-3 {
   float: left;
   width: 25%;
   height: 100%;
@@ -58,13 +82,35 @@ li {
   align-items: center;
   justify-content: center;
 }
-.row .col-2 {
+.row .col-3::after, .row .col-md-3::after {
+  content: "";
+  display: block;
+  clear: both;
+  float: none;
+}
+.row .col-2, .row .col-md-2 {
   float: left;
   width: 16.66%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.row .col-2::after, .row .col-md-2::after {
+  content: "";
+  display: block;
+  clear: both;
+  float: none;
+}
+@media screen and (max-width: 768px) {
+  .row .col-md-10,
+.row .col-md-8,
+.row .col-md-6,
+.row .col-md-4,
+.row .col-md-3,
+.row .col-md-2 {
+    width: 100%;
+  }
 }
 
 .board {
@@ -94,14 +140,47 @@ li {
   margin: auto;
   position: relative;
 }
+.wrapper .header-mobile {
+  display: none;
+}
 .wrapper .menu {
   background-color: #494cb4;
+  color: white;
   width: 256px;
   height: 100%;
-  position: absolute;
+  font-size: 22px;
+  position: fixed;
   top: 0px;
   left: 0px;
   transform: translate(-186px);
+  transition: all 1s;
+}
+.wrapper .menu ul li {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 48px;
+}
+.wrapper .menu ul li p {
+  width: 166px;
+  opacity: 0;
+  transition: all 1s;
+}
+.wrapper .menu ul li i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  transition: all 1s;
+}
+.wrapper .menu:hover {
+  transform: translate(0px);
+}
+.wrapper .menu:hover p {
+  opacity: 1;
+  transform: translate(120px);
+}
+.wrapper .menu:hover i {
+  transform: translate(-166px);
 }
 .wrapper .header {
   padding-left: 96px;
@@ -121,6 +200,7 @@ li {
   border: 2px solid rgba(0, 0, 0, 0.1);
   padding-left: 14px;
   font-size: 18px;
+  transition: all 1s;
 }
 .wrapper .header .search .search-box::-moz-placeholder {
   color: rgba(0, 0, 0, 0.3);
@@ -140,6 +220,7 @@ li {
 .wrapper .header .search .search-box:focus {
   outline: none;
   box-shadow: 0px 0px 10px #39b5e6;
+  width: 470px;
 }
 .wrapper .header .search input[type=submit] {
   display: none;
@@ -157,9 +238,13 @@ li {
   cursor: pointer;
   position: relative;
   left: -54px;
+  transition: all 1s;
 }
 .wrapper .header .search .search-button i {
   font-size: 22px;
+}
+.wrapper .header .search .search-box:focus .search-button {
+  transform: translate(200px);
 }
 .wrapper .header .notification {
   width: 100%;
@@ -317,4 +402,38 @@ li {
   padding: 0px 12px;
   padding-bottom: 1px;
   border-radius: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    min-width: 0px;
+  }
+  .wrapper .header-wide {
+    display: none;
+  }
+  .wrapper .header-mobile {
+    display: flex;
+    justify-content: end;
+    padding-right: 20px;
+    align-items: center;
+    font-size: 32px;
+    color: rgba(0, 0, 0, 0.3);
+  }
+  .wrapper .header-mobile i {
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 8px 12px;
+  }
+  .wrapper .main .dashboard {
+    height: 200px;
+  }
+  .wrapper .main .dashboard .card-container {
+    margin-right: 26px;
+    padding-bottom: 20px;
+  }
+  .wrapper .overview .graph,
+.wrapper .overview .list {
+    margin-right: 26px;
+    margin-top: 20px;
+  }
 }/*# sourceMappingURL=admin-page.css.map */
