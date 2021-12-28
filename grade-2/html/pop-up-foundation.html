@@ -7,10 +7,13 @@
     <title>Document</title>
   </head>
   <body>
-    <button onclick="toggleAlert();">GO!</button>
-    <!-- <button onclick="hideAlert();">NO!</button> -->
+    <button onclick="showAlert('one is for you');">ONE!</button>
+    <button onclick="showAlert('two is for me');">TWO!</button>
     <div class="alert" id="alert">
-      <p>Here is your amazing alert box!</p>
+      <p>Alert Content</p>
+      <button onclick="hideAlert(); ">
+        <p>Close</p>
+      </button>
     </div>
 
     <style>
@@ -32,26 +35,18 @@
     </style>
 
     <script>
-      function showAlert() {
-        document.querySelector(".alert").style.display = "block";
+      function showAlert(text) {
+        const alert = document.querySelector(".alert");
+        const alertText = alert.querySelector("p");
+
+        alert.style.display = "block";
+        alertText.innerHTML = text;
       }
 
       function hideAlert() {
-        document.querySelector(".alert").style.display = "none";
-      }
-
-      function toggleAlert() {
-        const button = document.querySelector("button");
         const alert = document.querySelector(".alert");
-        const status = window.getComputedStyle(alert).display;
 
-        if (status === "none") {
-          alert.style.display = "block";
-          button.innerHTML = "NO!";
-        } else {
-          alert.style.display = "none";
-          button.innerHTML = "GO!";
-        }
+        alert.style.display = "none";
       }
     </script>
   </body>
