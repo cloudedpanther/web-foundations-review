@@ -15,6 +15,7 @@
         <p>Close</p>
       </button>
     </div>
+    <h4>Say hello to my little friend!</h4>
 
     <style>
       .alert {
@@ -33,8 +34,21 @@
         bottom: 2px;
         display: inline;
       }
+
+      .tomato {
+        background-color: tomato;
+      }
+
+      .fontBig {
+        font-size: 30px;
+      }
     </style>
 
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
     <script>
       const btn1 = document.querySelector("#btn1");
       const btn2 = document.querySelector("#btn2");
@@ -63,6 +77,10 @@
       btnClose.addEventListener("click", function () {
         hideAlert();
       });
+
+      // document.querySelector("h4").classList.add("tomato");
+      $("h4").addClass("tomato");
+      $("h4").addClass("fontBig");
     </script>
   </body>
 </html>
