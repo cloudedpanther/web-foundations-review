@@ -7,11 +7,11 @@
     <title>Document</title>
   </head>
   <body>
-    <button onclick="showAlert('one is for you');">ONE!</button>
-    <button onclick="showAlert('two is for me');">TWO!</button>
+    <button id="btn1">ONE!</button>
+    <button id="btn2">TWO!</button>
     <div class="alert" id="alert">
       <p>Alert Content</p>
-      <button onclick="hideAlert(); ">
+      <button id="btn-close">
         <p>Close</p>
       </button>
     </div>
@@ -31,10 +31,15 @@
       .alert p {
         position: relative;
         bottom: 2px;
+        display: inline;
       }
     </style>
 
     <script>
+      const btn1 = document.querySelector("#btn1");
+      const btn2 = document.querySelector("#btn2");
+      const btnClose = document.querySelector("#btn-close");
+
       function showAlert(text) {
         const alert = document.querySelector(".alert");
         const alertText = alert.querySelector("p");
@@ -48,6 +53,16 @@
 
         alert.style.display = "none";
       }
+
+      btn1.addEventListener("click", function () {
+        showAlert("one is for you");
+      });
+      btn2.addEventListener("click", function () {
+        showAlert("two is for me");
+      });
+      btnClose.addEventListener("click", function () {
+        hideAlert();
+      });
     </script>
   </body>
 </html>
