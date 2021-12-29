@@ -149,6 +149,29 @@
         if (endNum === 3 || endNum === 6 || endNum === 9) console.log("clap");
         else console.log("pass");
       }
+
+      function calcDeposit(init) {
+        let after;
+        if (init < 50000) {
+          after = init * Math.pow(1.15, 2);
+        } else {
+          after = init * Math.pow(1.2, 2);
+        }
+        console.log(after);
+      }
+
+      function maxCoffee(init) {
+        // const second = init * (2 / 3);
+        // const third = second * (2 / 3);
+        // const sum = init + second + third;
+        // console.log(sum);
+        console.log((init * 19) / 9);
+      }
+
+      // function maxCoffee(init) {
+      //   console.log((init * 25) / 9);
+      // }
+      // maxCoffee(360);
     </script>
   </body>
 </html>
