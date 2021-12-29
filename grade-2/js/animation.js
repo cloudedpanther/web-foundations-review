@@ -87,6 +87,7 @@ $(".modal-form").on("submit", function (e) {
 //   }
 // });
 
+const MAX = $(".slide-row .slide-col").length;
 let slideNum = 1;
 
 $(".btn-point button").on("click", function (e) {
@@ -105,7 +106,7 @@ $(".prev").on("click", function () {
 });
 
 $(".next").on("click", function () {
-  if (slideNum < 3) {
+  if (slideNum < MAX) {
     const dest = -100 * slideNum + "vw";
     slideNum++;
     $(".slide-row").css("transform", `translate(${dest})`);
