@@ -16,6 +16,18 @@
     <title>Modal UI</title>
   </head>
   <body>
+    <div class="top-menu__container">
+      <div class="top-menu">
+        <h4 class="top-menu__title">Hello World</h4>
+        <a>Products</a>
+      </div>
+      <ul class="list-group top-menu__sub">
+        <li class="list-group-item">An item</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li>
+      </ul>
+    </div>
+
     <div class="modal-bg">
       <div class="modal-main">
         <p>Please log in.</p>
@@ -65,6 +77,21 @@
         height: 100px;
         margin: 200px auto;
       }
+
+      .top-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+      }
+
+      .top-menu a {
+        cursor: pointer;
+      }
+
+      .top-menu__sub {
+        display: none;
+      }
     </style>
 
     <script
@@ -84,6 +111,10 @@
       });
       $(".modal-bg .modal-main button").on("click", function () {
         $(".modal-bg").css("display", "none");
+      });
+
+      $(".top-menu a").on("click", function () {
+        $(".top-menu__sub").slideToggle();
       });
     </script>
   </body>
