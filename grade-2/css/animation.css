@@ -5,6 +5,7 @@
   position: fixed;
   top: 0%;
   left: 0%;
+  z-index: 9;
   color: white;
   background-color: wheat;
   transform: translate(-180px);
@@ -18,6 +19,7 @@
   position: fixed;
   top: 0%;
   left: 0%;
+  z-index: 10;
   transform: translateY(-100%);
   transition: all 0.5s;
 }
@@ -51,4 +53,52 @@
 .pwWarning {
   display: none;
   color: tomato;
+}
+
+.slide-title {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+.slide-container {
+  overflow: hidden;
+}
+
+.slide-row {
+  width: 300vw;
+  display: flex;
+  transform: translate(0vw);
+  transition: transform 0.5s;
+}
+
+.slide-col {
+  width: 100vw;
+}
+
+.slide-col img {
+  display: block;
+  width: 100%;
+}
+
+.btn-row {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-row button {
+  margin: 10px;
+}
+
+.to-slide-1 {
+  transform: translate(0vw);
+}
+
+.to-slide-2 {
+  transform: translate(-100vw);
+}
+
+.to-slide-3 {
+  transform: translate(-200vw);
 }

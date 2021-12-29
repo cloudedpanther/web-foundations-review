@@ -42,3 +42,47 @@ $(".modal-form").on("submit", function (e) {
     $(".pwWarning").css("display", "block");
   }
 });
+
+$(".slide-1").on("click", function () {
+  $(".slide-row").removeClass("to-slide-2");
+  $(".slide-row").removeClass("to-slide-3");
+  $(".slide-row").addClass("to-slide-1");
+});
+
+$(".slide-2").on("click", function () {
+  $(".slide-row").removeClass("to-slide-1");
+  $(".slide-row").removeClass("to-slide-3");
+  $(".slide-row").addClass("to-slide-2");
+});
+
+$(".slide-3").on("click", function () {
+  $(".slide-row").removeClass("to-slide-1");
+  $(".slide-row").removeClass("to-slide-2");
+  $(".slide-row").addClass("to-slide-3");
+});
+
+$(".prev").on("click", function () {
+  const atSlide2 = $(".slide-row").hasClass("to-slide-2");
+  const atSlide3 = $(".slide-row").hasClass("to-slide-3");
+
+  if (atSlide2) {
+    $(".slide-row").removeClass("to-slide-2");
+    $(".slide-row").addClass("to-slide-1");
+  } else if (atSlide3) {
+    $(".slide-row").removeClass("to-slide-3");
+    $(".slide-row").addClass("to-slide-2");
+  }
+});
+
+$(".next").on("click", function () {
+  const atSlide1 = $(".slide-row").hasClass("to-slide-1");
+  const atSlide2 = $(".slide-row").hasClass("to-slide-2");
+
+  if (atSlide1) {
+    $(".slide-row").removeClass("to-slide-1");
+    $(".slide-row").addClass("to-slide-2");
+  } else if (atSlide2) {
+    $(".slide-row").removeClass("to-slide-2");
+    $(".slide-row").addClass("to-slide-3");
+  }
+});
