@@ -19,7 +19,7 @@
   top: 0%;
   left: 0%;
   transform: translateY(-100%);
-  transition: all 1s;
+  transition: all 0.5s;
 }
 
 .modal-main {
@@ -32,4 +32,23 @@
 .modal-main p {
   margin: 0%;
   margin-bottom: 20px;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-form input {
+  margin-bottom: 10px;
+}
+
+.emailWarning {
+  display: none;
+  color: tomato;
+}
+
+.pwWarning {
+  display: none;
+  color: tomato;
 }
