@@ -51,6 +51,8 @@
       </p>
     </div>
 
+    <input type="text" class="modal-input" />
+
     <style>
       .main-bg {
         background-image: url("../img/photo1.jpg");
@@ -107,7 +109,9 @@
 
     <script>
       $(".btn").on("click", function () {
-        $(".modal-bg").css("display", "block");
+        if ($(".modal-input").val() === "hello") {
+          $(".modal-bg").css("display", "block");
+        }
       });
       $(".modal-bg .modal-main button").on("click", function () {
         $(".modal-bg").css("display", "none");
