@@ -31,6 +31,15 @@
     <div class="modal-bg">
       <div class="modal-main">
         <p>Please log in.</p>
+        <form class="modal-form">
+          <div class="form-group">
+            <input class="email" type="email" placeholder="e-mail" />
+          </div>
+          <div class="form-group">
+            <input class="password" type="password" placeholder="password" />
+          </div>
+          <input type="submit" value="log in" />
+        </form>
         <button>Close</button>
       </div>
     </div>
@@ -50,8 +59,6 @@
         <a class="btn btn-primary btn-lg" href="#" role="button">Log In</a>
       </p>
     </div>
-
-    <input type="text" class="modal-input" />
 
     <style>
       .main-bg {
@@ -75,9 +82,8 @@
 
       .modal-main {
         background-color: white;
-        width: 300px;
-        height: 100px;
-        margin: 200px auto;
+        margin: 200px 200px;
+        padding: 20px;
       }
 
       .top-menu {
@@ -109,9 +115,7 @@
 
     <script>
       $(".btn").on("click", function () {
-        if ($(".modal-input").val() === "hello") {
-          $(".modal-bg").css("display", "block");
-        }
+        $(".modal-bg").css("display", "block");
       });
       $(".modal-bg .modal-main button").on("click", function () {
         $(".modal-bg").css("display", "none");
@@ -120,6 +124,31 @@
       $(".top-menu a").on("click", function () {
         $(".top-menu__sub").slideToggle();
       });
+
+      $(".modal-form").on("submit", function (e) {
+        if ($(".email").val() === "" || $(".password").val() === "") {
+          e.preventDefault();
+          $(".modal-main p").html("Please fill up the form.");
+          $(".modal-main p").css("color", "tomato");
+        }
+      });
+
+      function game_369(num) {
+        if (num % 3 === 0) console.log("clap");
+        else console.log("pass");
+      }
+
+      function upgrade_369(num) {
+        if (num % 9 === 0) console.log("clap x 2");
+        else if (num % 3 === 0) console.log("clap");
+        else console.log("pass");
+      }
+
+      function origin_369(num) {
+        const endNum = num % 10;
+        if (endNum === 3 || endNum === 6 || endNum === 9) console.log("clap");
+        else console.log("pass");
+      }
     </script>
   </body>
 </html>
