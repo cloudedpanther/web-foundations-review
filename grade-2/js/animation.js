@@ -1,17 +1,21 @@
 $(".show-menu").on("click", function () {
   $(".menu").css("transform", "translate(0px)");
+  $(".menu").css("opacity", "1");
 });
 
 $(".menu").on("click", function () {
   $(".menu").css("transform", "translate(-180px)");
+  $(".menu").css("opacity", "0");
 });
 
 $(".show-modal").on("click", function () {
   $(".modal").css("transform", "translateY(0%)");
+  $(".modal").css("opacity", "1");
 });
 
 $(".modal-close").on("click", function () {
   $(".modal").css("transform", "translateY(-100%)");
+  $(".modal").css("opacity", "0");
 });
 
 const emailRegex =
@@ -110,5 +114,16 @@ $(".next").on("click", function () {
     const dest = -100 * slideNum + "vw";
     slideNum++;
     $(".slide-row").css("transform", `translate(${dest})`);
+  }
+});
+
+$(window).on("scroll", function () {
+  const scrollNow = $(window).scrollTop();
+  if (scrollNow > 100) {
+    $(".top-menu").css("backgroundColor", "white");
+    $(".top-menu__title").addClass("top-menu__title--sm");
+  } else {
+    $(".top-menu").css("backgroundColor", "transparent");
+    $(".top-menu__title").removeClass("top-menu__title--sm");
   }
 });
