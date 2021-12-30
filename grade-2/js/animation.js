@@ -18,6 +18,12 @@ $(".modal-close").on("click", function () {
   $(".modal").css("opacity", "0");
 });
 
+$(".modal").on("click", function (e) {
+  if (e.currentTarget === e.target) {
+    $(".modal").css("transform", "translateY(-100%)");
+    $(".modal").css("opacity", "0");
+  }
+});
 const emailRegex =
   /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
 
@@ -127,3 +133,16 @@ $(window).on("scroll", function () {
     $(".top-menu__title").removeClass("top-menu__title--sm");
   }
 });
+
+const tabNum = $(".list .tab-button").length;
+
+for (let i = 0; i < tabNum; i++) {
+  $(".tab-button")
+    .eq(i)
+    .on("click", function () {
+      $(".tab-button").removeClass("active");
+      $(".tab-content").removeClass("show");
+      $(".tab-button").eq(i).addClass("active");
+      $(".tab-content").eq(i).addClass("show");
+    });
+}
