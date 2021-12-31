@@ -35,3 +35,31 @@ $(".item-select select").on("change", function () {
     $(".size-select select").append(option);
   }
 });
+
+const students = ["john", "kevin", "anna", "anna", "mindy", "carl"];
+
+function findName(name) {
+  for (let i = 0; i < students.length; i++) {
+    if (students[i] === name) {
+      console.log("Exists");
+      return;
+    }
+  }
+}
+
+function gugu() {
+  for (let i = 2; i < 10; i++) {
+    for (let j = 1; j < 10; j++) {
+      console.log(i * j);
+    }
+  }
+}
+
+function calcGoal(prf, avg) {
+  let sum = 0;
+  prf.forEach(function (e) {
+    sum += e;
+  });
+  const goal = avg * 6 - sum;
+  console.log(`12월엔 ${goal}개를 팔아야 합니다.`);
+}
