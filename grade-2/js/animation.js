@@ -134,15 +134,31 @@ $(window).on("scroll", function () {
   }
 });
 
-const tabNum = $(".list .tab-button").length;
+// const tabNum = $(".list .tab-button").length;
 
-for (let i = 0; i < tabNum; i++) {
-  $(".tab-button")
-    .eq(i)
-    .on("click", function () {
-      $(".tab-button").removeClass("active");
-      $(".tab-content").removeClass("show");
-      $(".tab-button").eq(i).addClass("active");
-      $(".tab-content").eq(i).addClass("show");
-    });
+// for (let i = 0; i < tabNum; i++) {
+//   $(".tab-button")
+//     .eq(i)
+//     .on("click", function () {
+//       $(".tab-button").removeClass("active");
+//       $(".tab-content").removeClass("show");
+//       $(".tab-button").eq(i).addClass("active");
+//       $(".tab-content").eq(i).addClass("show");
+//     });
+// }
+
+function handleTab(index) {
+  $(".tab-button").removeClass("active");
+  $(".tab-content").removeClass("show");
+  $(".tab-button").eq(index).addClass("active");
+  $(".tab-content").eq(index).addClass("show");
 }
+
+$(".list").on("click", function (e) {
+  const selected = e.target;
+  document.querySelectorAll(".list .tab-button").forEach((li, index) => {
+    if (li === selected) {
+      handleTab(index);
+    }
+  });
+});
