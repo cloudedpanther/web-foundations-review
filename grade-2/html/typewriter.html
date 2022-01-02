@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="textbox">
+      <h1>Hello</h1>
+    </div>
+    <button>Button</button>
+  </body>
+
+  <style>
+    .textbox {
+      height: 100px;
+    }
+  </style>
+
+  <script>
+    const text = document.querySelector("h1");
+    const btn = document.querySelector("button");
+    const surpriseText = "I'm fine thank you, and you?".split("");
+
+    btn.addEventListener("click", function () {
+      let cnt = 1;
+      text.innerHTML = "";
+      for (let i = 0; i < surpriseText.length; i++) {
+        const letter = surpriseText[i];
+        let timeout;
+        if (letter === " ") timeout = 100 * cnt;
+        else {
+          timeout = 100 * cnt;
+          cnt++;
+        }
+        setTimeout(function () {
+          text.innerHTML += letter;
+        }, timeout);
+      }
+    });
+  </script>
+</html>
