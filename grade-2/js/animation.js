@@ -104,14 +104,22 @@ $(".btn-point button").on("click", function (e) {
   const val = e.target.innerText;
   const dest = -100 * (val - 1) + "vw";
   slideNum = val;
+  $(".slide-row").addClass("slide-move");
   $(".slide-row").css("transform", `translate(${dest})`);
+  setTimeout(function () {
+    $(".slide-row").removeClass("slide-move");
+  }, 500);
 });
 
 $(".prev").on("click", function () {
   if (slideNum > 1) {
     const dest = -100 * (slideNum - 2) + "vw";
     slideNum--;
+    $(".slide-row").addClass("slide-move");
     $(".slide-row").css("transform", `translate(${dest})`);
+    setTimeout(function () {
+      $(".slide-row").removeClass("slide-move");
+    }, 500);
   }
 });
 
@@ -119,9 +127,55 @@ $(".next").on("click", function () {
   if (slideNum < MAX) {
     const dest = -100 * slideNum + "vw";
     slideNum++;
+    $(".slide-row").addClass("slide-move");
     $(".slide-row").css("transform", `translate(${dest})`);
+    setTimeout(function () {
+      $(".slide-row").removeClass("slide-move");
+    }, 500);
   }
 });
+
+const pxToVw = 100 / $(window).width();
+
+for (let i = 1; i <= MAX; i++) {
+  var img = document.querySelectorAll(".slide-col img")[i - 1];
+  var manager = new Hammer.Manager(img);
+  manager.add(new Hammer.Pan({ threshold: 0 }));
+
+  manager.on("pan", function (e) {
+    const direction = e.deltaX;
+    const cur = -100 * (slideNum - 1);
+    if (slideNum < MAX && direction < -1) {
+      $(".slide-row").css(
+        "transform",
+        `translateX(${cur + direction * pxToVw}vw)`
+      );
+      if (e.isFinal) {
+        const dest = -100 * slideNum + "vw";
+        slideNum++;
+        $(".slide-row").addClass("slide-move");
+        $(".slide-row").css("transform", `translate(${dest})`);
+        setTimeout(function () {
+          $(".slide-row").removeClass("slide-move");
+        }, 500);
+      }
+    } else if (slideNum > 1 && direction > 1) {
+      $(".slide-row").css(
+        "transform",
+        `translateX(${cur + direction * pxToVw}vw)`
+      );
+      if (e.isFinal) {
+        const dest = -100 * (slideNum - 2) + "vw";
+        slideNum--;
+        $(".slide-row").addClass("slide-move");
+        $(".slide-row").css("transform", `translate(${dest})`);
+        setTimeout(function () {
+          $(".slide-row").removeClass("slide-move");
+        }, 500);
+      }
+    }
+  });
+}
 
 $(window).on("scroll", function () {
   const scrollNow = $(window).scrollTop();
