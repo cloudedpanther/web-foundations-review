@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/sticky.css" />
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="card-bg">
+      <div class="card-box"><img src="../img/card1.png" /></div>
+      <div class="card-box"><img src="../img/card2.png" /></div>
+      <div class="card-box"><img src="../img/card3.png" /></div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(window).scroll(function () {
+        const vw = $(window).width();
+        const cardHeight = 0.585 * vw;
+        const h = $(window).scrollTop();
+        const op0 = -h / cardHeight + 1000 / cardHeight + 1;
+        const scale0 = -h / (10 * cardHeight) + 1000 / (10 * cardHeight) + 1;
+        const op1 = -h / cardHeight + (1200 + cardHeight) / cardHeight + 1;
+        const scale1 =
+          -h / (10 * cardHeight) + (1200 + cardHeight) / (10 * cardHeight) + 1;
+        $(".card-box").eq(0).css("opacity", op0);
+        if (h >= 1000) {
+          $(".card-box").eq(0).css("transform", `scale(${scale0})`);
+        }
+        $(".card-box").eq(1).css("opacity", op1);
+        if (h >= 1200 + cardHeight) {
+          $(".card-box").eq(1).css("transform", `scale(${scale1})`);
+        }
+      });
+    </script>
+  </body>
+</html>
