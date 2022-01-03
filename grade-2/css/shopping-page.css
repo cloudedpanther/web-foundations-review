@@ -1,0 +1,35 @@
+.column-title {
+  margin-bottom: 30px;
+}
+
+.cart-container {
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.cart {
+  background-color: rgb(39, 37, 37);
+  color: white;
+  padding: 90px 0px;
+}
+
+.cart p {
+  margin: 0%;
+  text-align: center;
+}
+
+.sum {
+  margin: 20px 0px;
+  text-align: end;
+}
+
+.btn-buy {
+  width: 100%;
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+}
+
+.highlight {
+  background-color: yellow;
+}
