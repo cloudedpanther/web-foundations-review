@@ -64,7 +64,7 @@ var person2 = {
 
 // person.인사.apply(person2);
 
-console.log(otcha);
+// console.log(otcha);
 let otcha = "koh";
 function hi() {
   var otcha = "kim";
@@ -73,3 +73,16 @@ function hi() {
 }
 // hi();
 // console.log(otcha);
+
+function countChar(str) {
+  const obj = {};
+
+  [...str].sort().forEach(function (e) {
+    if (obj[e] > 0) obj[e]++;
+    else obj[e] = 1;
+  });
+
+  console.log(obj);
+}
+
+countChar("aacbbb");
