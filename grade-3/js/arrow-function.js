@@ -5,7 +5,7 @@ var 사람 = {
   },
 };
 
-사람.sayHi(); //안녕 나는 손흥민
+// 사람.sayHi(); //안녕 나는 손흥민
 
 var 자료 = {
   data: [1, 2, 3, 4, 5],
@@ -17,7 +17,7 @@ var 자료 = {
   console.log(sum);
 };
 
-자료.전부더하기();
+// 자료.전부더하기();
 
 document.getElementById("btn").addEventListener("click", function () {
   setTimeout(() => console.log(this.innerHTML), 1000);
@@ -30,7 +30,7 @@ const analyzer = (arr, e1, e2) => {
   console.log(arr[1] + e1 + arr[0] + e2);
 };
 
-analyzer`pants${pants} socks${socks}`;
+// analyzer`pants${pants} socks${socks}`;
 
 const pants2 = 0;
 const socks2 = 100;
@@ -45,12 +45,12 @@ const analyzer2 = (arr, e1, e2) => {
   }
 };
 
-analyzer2`pants${pants2} socks${socks2}`;
+// analyzer2`pants${pants2} socks${socks2}`;
 
 const o1 = { a: 1, b: 2 };
-console.log({ ...o1 });
+// console.log({ ...o1 });
 const arr1 = [1, 2, 3];
-console.log(...arr1);
+// console.log(...arr1);
 
 var person = {
   인사: function () {
@@ -62,4 +62,14 @@ var person2 = {
   name: "손흥민",
 };
 
-person.인사.apply(person2);
+// person.인사.apply(person2);
+
+console.log(otcha);
+let otcha = "koh";
+function hi() {
+  var otcha = "kim";
+  console.log("here is inside of a function");
+  console.log(otcha);
+}
+// hi();
+// console.log(otcha);
