@@ -85,4 +85,52 @@ function countChar(str) {
   console.log(obj);
 }
 
-countChar("aacbbb");
+// countChar("aacbbb");
+
+function Student(name, age) {
+  (this.name = name),
+    (this.age = age),
+    (this.sayHi = function () {
+      console.log(`Hi, I'm ${this.name}.`);
+    });
+}
+
+// Student.prototype.gender = "male";
+
+const student1 = new Student("John", "17");
+
+Student.prototype.gender = "male";
+
+const cat1 = { name: "kitty" };
+const cat2 = {};
+
+cat2.__proto__ = cat1;
+
+// console.log(cat2.name);
+
+class parent {
+  constructor(name, age) {
+    (this.name = name),
+      (this.age = age),
+      (this.sayHi = function () {
+        console.log("hi");
+      });
+  }
+  sayHello() {
+    console.log(this.name + "입니다.");
+  }
+}
+
+const child = new parent("kim", 20);
+console.log(child.name); // kim
+console.log(child); // parent { name: 'kim', age: 20, sayHi: ƒ }
+
+class children extends parent {
+  constructor(name, age) {
+    super(name, age);
+    this.height = 180;
+  }
+}
+
+const child1 = new children("pak", 18);
+console.log(child1); // { name: 'pak', age: 18, height: 180, sayHi: ƒ }
