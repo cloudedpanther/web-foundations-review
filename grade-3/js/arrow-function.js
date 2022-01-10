@@ -122,8 +122,8 @@ class parent {
 }
 
 const child = new parent("kim", 20);
-console.log(child.name); // kim
-console.log(child); // parent { name: 'kim', age: 20, sayHi: ƒ }
+// console.log(child.name); // kim
+// console.log(child); // parent { name: 'kim', age: 20, sayHi: ƒ }
 
 class children extends parent {
   constructor(name, age) {
@@ -133,4 +133,52 @@ class children extends parent {
 }
 
 const child1 = new children("pak", 18);
-console.log(child1); // { name: 'pak', age: 18, height: 180, sayHi: ƒ }
+// console.log(child1); // { name: 'pak', age: 18, height: 180, sayHi: ƒ }
+
+class puppy {
+  constructor(type, color) {
+    this.type = String(type);
+    this.color = String(color);
+  }
+}
+
+class kitten extends puppy {
+  constructor(type, color, age) {
+    super(type, color);
+    this.age = Number(age);
+  }
+}
+
+puppy.prototype.getOlder = function () {
+  if (this instanceof kitten) this.age++;
+};
+
+class Unit {
+  constructor() {
+    this.atk = 5;
+    this.hp = 100;
+  }
+  get battlePoint() {
+    return this.atk + this.hp;
+  }
+  set heal(amount) {
+    this.hp += amount;
+  }
+}
+
+const data = {
+  odd: [],
+  even: [],
+  setNumbers(...num) {
+    num.forEach((e) => {
+      if (e === Math.floor(e)) {
+        if (e % 2 === 0) this.even.push(e);
+        else this.odd.push(e);
+      }
+    });
+  },
+  get getNumbers() {
+    const arr = [...this.odd, ...this.even].sort((a, b) => a - b);
+    arr.forEach((e) => console.log(e));
+  },
+};
