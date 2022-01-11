@@ -182,3 +182,114 @@ const data = {
     arr.forEach((e) => console.log(e));
   },
 };
+
+let 신체정보 = {
+  body: {
+    height: 190,
+    weight: 70,
+  },
+  size: ["상의 Large", "바지 30인치"],
+};
+
+const {
+  body: { height, weight },
+  size: [upperSize, lowerSize],
+} = 신체정보;
+
+const loadImg = new Promise((resolve, reject) => {
+  document.getElementById("testImg").addEventListener("load", () => {
+    resolve();
+  });
+  document.getElementById("testImg").addEventListener("error", () => {
+    reject();
+  });
+});
+
+loadImg
+  .then(function () {
+    console.log("성공!");
+  })
+  .catch(function () {
+    console.log("실패!");
+  });
+
+const showHello = new Promise((resolve, reject) => {
+  $.ajax({
+    url: "https://codingapple1.github.io/hello.txt",
+    method: "GET",
+  }).done((result) => {
+    resolve(result);
+  });
+});
+
+// showHello
+//   .then(function (result) {
+//     console.log(result);
+//     return new Promise((resolve, reject) => {
+//       $.ajax({
+//         url: "https://codingapple1.github.io/hello2.txt",
+//         method: "GET",
+//       }).done((result) => {
+//         resolve(result);
+//       });
+//     });
+//   })
+//   .then(function (result) {
+//     console.log(result);
+//   });
+
+// const plusGo = new Promise(function (resolve, reject) {
+//   const sum = 9 + 3;
+//   // resolve(sum);
+//   reject();
+// });
+
+// plusGo
+//   .then(function (res) {
+//     console.log(res);
+//   })
+//   .catch(function () {
+//     console.log("rejected!!!");
+//   });
+
+// const plusGo = async () => {
+//   const sum = 9 + 3;
+//   return sum;
+// };
+
+// plusGo().then(function (res) {
+//   console.log(res);
+// });
+
+const plusGo = async () => {
+  // const getSum = new Promise(function (resolve, reject) {
+  //   const sum = 9 + 3;
+  //   resolve(sum);
+  // });
+  // getSum.then(function(res) {
+  //   console.log(res); // sum
+  // })
+  const getSum = async () => {
+    const sum = 9 + 3;
+    return sum;
+  };
+  const result = await getSum();
+  console.log(result);
+};
+
+// plusGo();
+
+const btnClickHandler = async () => {
+  const btn = document.querySelector("#newBtn");
+
+  const isBtnClicked = new Promise((resolve, reject) => {
+    btn.addEventListener("click", () => {
+      resolve("성공했어요!");
+    });
+  });
+
+  const result = await isBtnClicked;
+  console.log(result);
+};
+
+btnClickHandler();
