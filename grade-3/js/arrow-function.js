@@ -347,3 +347,19 @@ const getCheese = async () => {
   await delay(1000); // await은 async함수 안에서만 사용할 수 있다.
   return "🧀";
 };
+
+const students1 = ["John", "Tom", "Mia", "Tom"];
+const students2 = new Set(["John", "Tom", "Mia", "Tom"]);
+
+console.log(students1); // ['John', 'Tom', 'Mia', 'Tom']
+console.log(students2); // ['John', 'Tom', 'Mia']
+
+students2.add("Sally");
+students2.delete("John");
+
+console.log(students2); // ['Tom', 'Mia', 'Sally']
+console.log(students2.has("Mia")); // true
+
+let students = ["John", "Tom", "Mia", "Tom"];
+let studentsSet = new Set(students);
+students = [...studentsSet];
