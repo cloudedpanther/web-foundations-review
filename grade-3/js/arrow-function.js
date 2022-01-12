@@ -292,4 +292,58 @@ const btnClickHandler = async () => {
   console.log(result);
 };
 
-btnClickHandler();
+// btnClickHandler();
+
+// const cutePromise = new Promise(function (resolve, reject) {
+//   if (1) {
+//     setTimeout(function () {
+//       console.log("Hi");
+//       resolve();
+//     }, 1000);
+//   } else {
+//     reject();
+//   }
+// });
+
+// cutePromise
+//   .then(function () {
+//     console.log("finished");
+//   })
+//   .catch(function () {
+//     console.log("error detected");
+//   });
+
+async function tada() {
+  return new Promise(function (resolve, reject) {
+    console.log("YO");
+  });
+}
+
+// 아래 promise 객체와 async 함수는 동일한 역할을 한다.
+
+const fetchUser_ = new Promise((resolve, reject) => {
+  // fetching...
+  resolve("user");
+});
+
+async function fetchUser() {
+  // fetching...
+  return "user";
+}
+
+const delay = (ms) => {
+  // promise는 생성되는 순간 작동하게 된다.
+  // 이렇게 함수의 리턴값으로 사용하게 되면 생성되는 순간을 보다 쉽게 정할 수 있다.
+  return new Promise((resolve) => setTimeout(resolve, ms));
+};
+
+// 아래 두 함수는 같은 역할을 한다.
+
+const getCheese_ = () => {
+  return delay(1000).then(() => "🧀");
+};
+
+const getCheese = async () => {
+  await delay(1000); // await은 async함수 안에서만 사용할 수 있다.
+  return "🧀";
+};
